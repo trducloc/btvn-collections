@@ -42,14 +42,21 @@ public class Person implements InputTable {
         this.setName(new Scanner(System.in).nextLine());
         System.out.print("Nhập địa chỉ: ");
         this.setAddress(new Scanner(System.in).nextLine());
-        System.out.print("Nhập SDT: ");
-        this.setPhone(new Scanner(System.in).nextLine());
+        boolean validInput = false;
         do {
-            if (phone.matches("(\\+84|0)\\d{9,10}")) {
-            } else {
-                System.out.println("Số điện thoại không hợp lệ, vui lòng nhập lại");
+            try {
+                System.out.print("Nhập số điện thoại: ");
+                phone = new Scanner(System.in).nextLine();
+                if (phone.matches("\\d{10}")) {
+                    validInput = true;
+                } else {
+                    System.out.println("Số điện thoại không hợp lệ. Vui lòng nhập lại.");
+                }
+            } catch (Exception e) {
+                System.out.println("Đã xảy ra lỗi khi nhập số điện thoại. Vui lòng nhập lại.");
+                phone = new Scanner(System.in).nextLine();
             }
-        } while(true);
+        } while (!validInput);
     }
 
 }

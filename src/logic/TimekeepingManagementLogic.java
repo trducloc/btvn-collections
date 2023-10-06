@@ -25,7 +25,7 @@ public class TimekeepingManagementLogic {
             System.out.println("Chưa có thông tin công nhân, vui lòng nhập trước.");
             return;
         }
-        System.out.println("Cần in danh sách hóa đơn cho bao nhiêu công nhân: ");
+        System.out.println("Cần lập bảng chấm công cho bao nhiêu công nhân: ");
         int workerNumber;
         do {
             try {
@@ -79,7 +79,7 @@ public class TimekeepingManagementLogic {
         } while(true);
 
         int workingDaynumber;
-        System.out.println("Công nhân này làm việc bao nhiêu ngày: ");
+        System.out.println("Công nhân này làm việc bao nhingàyêu : ");
         do {
             try{
                 workingDaynumber = new Scanner(System.in).nextInt();
@@ -115,7 +115,8 @@ public class TimekeepingManagementLogic {
                     System.out.println("Mã xưởng sản xuất phải là một nguyên có 3 chữ số, vui lòng nhập lại:");
                 }
             } while (true);
-            details.add(new TimekeepingManagementDetail(factory));
+
+            details.add(new TimekeepingManagementDetail(factory, workingDaynumber));
         }
         return details;
     }

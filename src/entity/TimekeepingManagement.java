@@ -7,6 +7,9 @@ public class TimekeepingManagement {
     private Factory factory;
     private List<TimekeepingManagementDetail> timekeepingManagementDetails;
 
+    public TimekeepingManagement(Factory factory, int workingDaynumber) {
+    }
+
     public Worker getWorker() {
         return worker;
     }
